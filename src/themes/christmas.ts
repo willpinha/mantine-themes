@@ -5,7 +5,7 @@ export const christmas: Theme = {
 	label: "🎄 Christmas",
 	instance: buildThemeInstance({
 		baseHue: 140,
-		baseSaturation: 50,
+		baseSaturation: 30,
 		colors: {
 			primary: [
 				"#ffecec",

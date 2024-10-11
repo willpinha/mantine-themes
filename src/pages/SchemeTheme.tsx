@@ -1,3 +1,4 @@
+import { Examples } from "@/components/Examples";
 import classes from "./scheme-theme.module.css";
 
 import { SchemeToggle } from "@/components/SchemeToggle";
@@ -5,6 +6,8 @@ import { MantineLayout } from "@/layouts/MantineLayout";
 import { type Scheme, type Theme } from "@/lib/themes";
 import themes from "@/themes";
 import {
+	ActionIcon,
+	Anchor,
 	AppShell,
 	Burger,
 	Button,
@@ -14,9 +17,10 @@ import {
 	Stack,
 	Text,
 	Title,
+	Tooltip,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { TbArrowRight } from "react-icons/tb";
+import { TbArrowRight, TbBrandGithub } from "react-icons/tb";
 
 export function SchemeThemePage({
 	scheme,
@@ -103,19 +107,45 @@ export function SchemeThemePage({
 				padding="md"
 			>
 				<AppShell.Header className={classes.header}>
-					<Group h="100%" px="md">
-						<Burger
-							opened={mobileOpened}
-							onClick={toggleMobile}
-							hiddenFrom="sm"
-							size="sm"
-						/>
-						<Burger
-							opened={desktopOpened}
-							onClick={toggleDesktop}
-							visibleFrom="sm"
-							size="sm"
-						/>
+					<Group h="100%" px="md" justify="space-between">
+						<Group>
+							<Burger
+								opened={mobileOpened}
+								onClick={toggleMobile}
+								hiddenFrom="sm"
+								size="sm"
+							/>
+							<Burger
+								opened={desktopOpened}
+								onClick={toggleDesktop}
+								visibleFrom="sm"
+								size="sm"
+							/>
+							<Stack gap={0}>
+								<Title visibleFrom="sm" order={5}>
+									Mantine Themes
+								</Title>
+								<Text c="dimmed" size="xs">
+									Made by{" "}
+									<Anchor
+										inherit
+										href="https://github.com/willpinha"
+									>
+										willpinha
+									</Anchor>
+								</Text>
+							</Stack>
+						</Group>
+						<Tooltip label="GitHub">
+							<ActionIcon
+								aria-label="GitHub"
+								color="dark.6"
+								component="a"
+								href="https://github.com/willpinha/mantine-themes"
+							>
+								<TbBrandGithub />
+							</ActionIcon>
+						</Tooltip>
 					</Group>
 				</AppShell.Header>
 				<AppShell.Navbar p="md" className={classes.navbar}>
@@ -131,28 +161,35 @@ export function SchemeThemePage({
 							<SchemeToggle scheme={scheme} theme={theme} />
 						</Group>
 
-						{themes.map((tm) => {
-							const isCurrentTheme = tm.slug === theme.slug;
+						<Stack gap="xs">
+							{themes.map((tm) => {
+								const isCurrentTheme = tm.slug === theme.slug;
 
-							return (
-								<Button
-									key={tm.slug}
-									justify="space-between"
-									component="a"
-									href={`/${scheme}-${tm.slug}`}
-									variant={
-										isCurrentTheme ? "light" : "default"
-									}
-									rightSection={<AllColorCircles tm={tm} />}
-								>
-									{isCurrentTheme && <TbArrowRight />}
-									{tm.label}
-								</Button>
-							);
-						})}
+								return (
+									<Button
+										key={tm.slug}
+										justify="space-between"
+										component="a"
+										href={`/${scheme}-${tm.slug}`}
+										variant={
+											isCurrentTheme ? "light" : "default"
+										}
+										rightSection={
+											<AllColorCircles tm={tm} />
+										}
+									>
+										{isCurrentTheme && <TbArrowRight />}
+										{tm.label}
+									</Button>
+								);
+							})}
+						</Stack>
 					</Stack>
 				</AppShell.Navbar>
-				<AppShell.Main>Hello</AppShell.Main>
+				<AppShell.Main>
+					<Title pb="md">Examples</Title>
+					<Examples />
+				</AppShell.Main>
 			</AppShell>
 		);
 	}

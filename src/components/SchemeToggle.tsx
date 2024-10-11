@@ -11,6 +11,7 @@ export function SchemeToggle({
 }) {
 	return (
 		<ActionIcon
+			aria-label="Toggle scheme"
 			component="a"
 			href={`/${getTargetScheme(scheme)}-${theme.slug}`}
 			variant="default"
