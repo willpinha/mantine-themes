@@ -41,21 +41,27 @@ export function SchemeThemePage({
 
 		const AllColorCircles = ({ tm }: { tm: Theme }) => {
 			const primary = {
-				background: tm.instance.colors!.primary![4],
-				border: tm.instance.colors!.primary![9],
+				background: tm.instance.colors!.primary![9],
+				border: tm.instance.colors!.primary![5],
 			};
 			const secondary = {
-				background: tm.instance.colors!.secondary![4],
-				border: tm.instance.colors!.secondary![9],
+				background: tm.instance.colors!.secondary![9],
+				border: tm.instance.colors!.secondary![5],
 			};
 			const tertiary = {
-				background: tm.instance.colors!.tertiary![4],
-				border: tm.instance.colors!.tertiary![9],
+				background: tm.instance.colors!.tertiary![9],
+				border: tm.instance.colors!.tertiary![5],
 			};
-			const base = {
-				background: tm.instance.colors!.background,
-				border: tm.instance.colors!.border,
-			};
+			const base =
+				scheme === "light"
+					? {
+							background: tm.instance.colors!.white!,
+							border: tm.instance.colors!.gray![5],
+						}
+					: {
+							background: tm.instance.colors!.dark![7],
+							border: tm.instance.colors!.dark![5],
+						};
 
 			return (
 				<Group gap={em(3)}>
