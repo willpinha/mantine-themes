@@ -1,8 +1,6 @@
 ---
 import "@mantine/core/styles.css";
 
-import { ColorSchemeScript } from "@mantine/core";
-
 interface Props {
 	title: string;
 }
@@ -17,7 +15,6 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>Mantine Themes | {title}</title>
 		<link rel="icon" href="/logo.svg" />
-		<ColorSchemeScript />
 	</head>
 	<body>
 		<slot />

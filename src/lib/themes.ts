@@ -57,8 +57,14 @@ export function buildThemeInstance({
 	});
 }
 
+export function getTargetScheme(scheme: Scheme) {
+	return scheme === "light" ? "dark" : "light";
+}
+
 export type Theme = {
 	slug: string;
 	label: string;
 	instance: ReturnType<typeof buildThemeInstance>;
 };
+
+export type Scheme = "light" | "dark";
