@@ -1,3 +1,5 @@
+import classes from "./scheme-theme.module.css";
+
 import { SchemeToggle } from "@/components/SchemeToggle";
 import { MantineLayout } from "@/layouts/MantineLayout";
 import { type Scheme, type Theme } from "@/lib/themes";
@@ -13,6 +15,7 @@ import {
 	Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { TbArrowRight } from "react-icons/tb";
 
 export function SchemeThemePage({
 	scheme,
@@ -98,7 +101,7 @@ export function SchemeThemePage({
 				}}
 				padding="md"
 			>
-				<AppShell.Header>
+				<AppShell.Header className={classes.header}>
 					<Group h="100%" px="md">
 						<Burger
 							opened={mobileOpened}
@@ -114,7 +117,7 @@ export function SchemeThemePage({
 						/>
 					</Group>
 				</AppShell.Header>
-				<AppShell.Navbar p="md">
+				<AppShell.Navbar p="md" className={classes.navbar}>
 					<Stack>
 						<Group justify="space-between">
 							<Title order={5}>Choose a theme</Title>
@@ -136,6 +139,7 @@ export function SchemeThemePage({
 									}
 									rightSection={<AllColorCircles tm={tm} />}
 								>
+									{isCurrentTheme && <TbArrowRight />}
 									{tm.label}
 								</Button>
 							);
