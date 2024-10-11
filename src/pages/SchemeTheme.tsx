@@ -12,6 +12,7 @@ import {
 	em,
 	Group,
 	Stack,
+	Text,
 	Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
@@ -120,7 +121,12 @@ export function SchemeThemePage({
 				<AppShell.Navbar p="md" className={classes.navbar}>
 					<Stack>
 						<Group justify="space-between">
-							<Title order={5}>Choose a theme</Title>
+							<Stack gap={0}>
+								<Title order={5}>Choose a theme</Title>
+								<Text c="dimmed" size="xs">
+									{theme.label} selected
+								</Text>
+							</Stack>
 
 							<SchemeToggle scheme={scheme} theme={theme} />
 						</Group>

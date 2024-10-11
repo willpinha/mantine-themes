@@ -2,7 +2,7 @@ import { buildThemeInstance, type Theme } from "@/lib/themes";
 
 export const dracula: Theme = {
 	slug: "dracula",
-	label: "Dracula",
+	label: "🧛 Dracula",
 	instance: buildThemeInstance({
 		baseHue: 230,
 		baseSaturation: 10,

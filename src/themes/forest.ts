@@ -2,7 +2,7 @@ import { buildThemeInstance, type Theme } from "@/lib/themes";
 
 export const forest: Theme = {
 	slug: "forest",
-	label: "Forest",
+	label: "🌳 Forest",
 	instance: buildThemeInstance({
 		baseHue: 60,
 		baseSaturation: 20,

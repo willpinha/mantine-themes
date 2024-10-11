@@ -2,7 +2,7 @@ import { buildThemeInstance, type Theme } from "@/lib/themes";
 
 export const christmas: Theme = {
 	slug: "christmas",
-	label: "Christmas",
+	label: "🎄 Christmas",
 	instance: buildThemeInstance({
 		baseHue: 140,
 		baseSaturation: 50,

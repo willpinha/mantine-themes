@@ -1,5 +1,5 @@
 import type { Theme } from "@/lib/themes";
-import { christmas } from "./chirstmas";
+import { christmas } from "./christmas";
 import { dracula } from "./dracula";
 import { forest } from "./forest";
 
