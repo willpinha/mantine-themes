@@ -55,7 +55,7 @@ export function SchemeThemePage({
 			const base =
 				scheme === "light"
 					? {
-							background: tm.instance.colors!.white!,
+							background: tm.instance!.white!,
 							border: tm.instance.colors!.gray![5],
 						}
 					: {
@@ -76,6 +76,10 @@ export function SchemeThemePage({
 					<ColorCircle
 						background={tertiary.background}
 						border={tertiary.border}
+					/>
+					<ColorCircle
+						background={base.background}
+						border={base.border}
 					/>
 				</Group>
 			);
