@@ -1,3 +1,4 @@
+import { baseURL } from "@/lib/url";
 import { CodeHighlight } from "@mantine/code-highlight";
 import {
 	ActionIcon,
@@ -52,7 +53,7 @@ export function DocumentationButton() {
 			>
 				<Stack gap="md">
 					<Center>
-						<Image src="/logo.svg" w={100} />
+						<Image src={`${baseURL()}/logo.svg`} w={100} />
 					</Center>
 					<Title order={3}>1. About</Title>
 					<Text>

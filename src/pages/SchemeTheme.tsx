@@ -5,6 +5,7 @@ import { DocumentationButton } from "@/components/DocumentationButton";
 import { SchemeToggle } from "@/components/SchemeToggle";
 import { MantineLayout } from "@/layouts/MantineLayout";
 import { type Scheme, type Theme } from "@/lib/themes";
+import { baseURL } from "@/lib/url";
 import themes from "@/themes";
 import {
 	ActionIcon,
@@ -174,7 +175,7 @@ export function SchemeThemePage({
 										key={tm.slug}
 										justify="space-between"
 										component="a"
-										href={`/${scheme}-${tm.slug}`}
+										href={`${baseURL()}/${scheme}-${tm.slug}`}
 										variant={
 											isCurrentTheme ? "light" : "default"
 										}
