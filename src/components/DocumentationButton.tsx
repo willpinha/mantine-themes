@@ -3,7 +3,9 @@ import {
 	ActionIcon,
 	Alert,
 	Anchor,
+	Center,
 	Code,
+	Image,
 	Modal,
 	Stack,
 	Text,
@@ -49,6 +51,9 @@ export function DocumentationButton() {
 				size="lg"
 			>
 				<Stack gap="md">
+					<Center>
+						<Image src="/logo.svg" w={100} />
+					</Center>
 					<Title order={3}>1. About</Title>
 					<Text>
 						<Text span fs="italic" c="secondary">
