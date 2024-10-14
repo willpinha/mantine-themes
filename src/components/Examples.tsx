@@ -88,7 +88,7 @@ function CrudTable() {
 	);
 
 	return (
-		<Paper className={classes.paper} p="md">
+		<Paper className={classes.paper} p="md" shadow="sm">
 			<Stack>
 				<Group justify="space-between">
 					<Stack gap={0}>

@@ -1,6 +1,7 @@
 import { Examples } from "@/components/Examples";
 import classes from "./scheme-theme.module.css";
 
+import { DocumentationButton } from "@/components/DocumentationButton";
 import { SchemeToggle } from "@/components/SchemeToggle";
 import { MantineLayout } from "@/layouts/MantineLayout";
 import { type Scheme, type Theme } from "@/lib/themes";
@@ -136,16 +137,19 @@ export function SchemeThemePage({
 								</Text>
 							</Stack>
 						</Group>
-						<Tooltip label="GitHub">
-							<ActionIcon
-								aria-label="GitHub"
-								color="dark.6"
-								component="a"
-								href="https://github.com/willpinha/mantine-themes"
-							>
-								<TbBrandGithub />
-							</ActionIcon>
-						</Tooltip>
+						<Group gap="xs">
+							<DocumentationButton />
+							<Tooltip label="GitHub">
+								<ActionIcon
+									aria-label="GitHub"
+									color="dark.6"
+									component="a"
+									href="https://github.com/willpinha/mantine-themes"
+								>
+									<TbBrandGithub />
+								</ActionIcon>
+							</Tooltip>
+						</Group>
 					</Group>
 				</AppShell.Header>
 				<AppShell.Navbar p="md" className={classes.navbar}>
