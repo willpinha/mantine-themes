@@ -27,8 +27,18 @@ function App() {
 }
 `;
 
+function withDocumentation() {
+	if (typeof window === "undefined") {
+		return false;
+	}
+
+	const searchParams = new URLSearchParams(window.location.search);
+
+	return searchParams.has("documentation");
+}
+
 export function DocumentationButton() {
-	const [opened, { open, close }] = useDisclosure();
+	const [opened, { open, close }] = useDisclosure(withDocumentation());
 
 	return (
 		<>
@@ -123,10 +133,21 @@ export function DocumentationButton() {
 						object is used for components like buttons, alerts,
 						badges, etc.
 					</Text>
+					<Text>
+						Each theme will have both light and dark schemes. You
+						can switch between them by following the Mantine{" "}
+						<Anchor href="https://mantine.dev/theming/color-schemes">
+							Color Schemes
+						</Anchor>{" "}
+						documentation
+					</Text>
 					<Title order={3}>3. How to use?</Title>
 					<Text>
 						Just choose a color from the{" "}
-						<Anchor href="https://github.com/willpinha/mantine-themes/tree/master/src/themes">
+						<Anchor
+							href="https://github.com/willpinha/mantine-themes/tree/master/src/themes"
+							target="_blank"
+						>
 							available ones
 						</Anchor>{" "}
 						or build your own with the{" "}
