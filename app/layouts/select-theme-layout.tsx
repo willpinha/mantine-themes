@@ -10,6 +10,7 @@ import {
 	Tooltip,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { TbBrandGithub } from "react-icons/tb";
 import { Outlet } from "react-router";
 import { SchemeToggleButton } from "~/components/button/SchemeToggleButton";
 import { SelectThemeButton } from "~/components/button/SelectThemeButton";
@@ -72,11 +73,11 @@ export default function Layout() {
 						<Tooltip label="GitHub">
 							<ActionIcon
 								aria-label="GitHub"
-								color="dark.6"
+								color="dark.8"
 								component="a"
 								href="https://github.com/willpinha/mantine-themes"
 							>
-								G
+								<TbBrandGithub />
 							</ActionIcon>
 						</Tooltip>
 					</Group>
