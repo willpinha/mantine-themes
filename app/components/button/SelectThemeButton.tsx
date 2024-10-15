@@ -55,6 +55,7 @@ export function SelectThemeButton({ themeName }: SelectThemeButtonProps) {
 			onClick={handleClick}
 			variant={isCurrent ? "filled" : "default"}
 			rightSection={isCurrent ? null : <ColorGroup />}
+			justify="space-between"
 		>
 			{theme.label}
 		</Button>

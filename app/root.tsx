@@ -1,17 +1,22 @@
-import "@mantine/core/styles.css";
-
-import "@mantine/carousel/styles.css";
+import mantineCoreStyles from "@mantine/core/styles.css?url";
 
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { useMounted } from "@mantine/hooks";
 import type { LinksFunction } from "react-router";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import { SelectThemeButton } from "./components/button/SelectThemeButton";
+import { WelcomeLoading } from "./components/loading/WelcomeLoading";
 import { useThemes } from "./hooks/use-themes";
 
-export const links: LinksFunction = () => [];
+export const links: LinksFunction = () => [
+	{
+		rel: "stylesheet",
+		href: mantineCoreStyles,
+	},
+];
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const { themes, currentThemeName } = useThemes();
+	const mounted = useMounted();
 
 	return (
 		<html lang="en">
@@ -27,8 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			</head>
 			<body>
 				<MantineProvider theme={themes[currentThemeName].mantineTheme}>
-					<SelectThemeButton themeName="dracula" />
-					<SelectThemeButton themeName="forest" />
+					<WelcomeLoading />
 					{children}
 				</MantineProvider>
 				<ScrollRestoration />
