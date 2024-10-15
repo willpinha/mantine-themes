@@ -1,11 +1,33 @@
 {
-	"extends": "astro/tsconfigs/strict",
+	"include": [
+		"**/*.ts",
+		"**/*.tsx",
+		"**/.server/**/*.ts",
+		"**/.server/**/*.tsx",
+		"**/.client/**/*.ts",
+		"**/.client/**/*.tsx",
+		".react-router/types/**/*"
+	],
 	"compilerOptions": {
-		"baseUrl": ".",
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"types": ["@react-router/node", "vite/client"],
+		"isolatedModules": true,
+		"esModuleInterop": true,
 		"jsx": "react-jsx",
-		"jsxImportSource": "react",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"resolveJsonModule": true,
+		"target": "ES2022",
+		"strict": true,
+		"allowJs": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
 		"paths": {
-			"@/*": ["src/*"]
-		}
+			"~/*": ["./app/*"]
+		},
+		"noEmit": true,
+		"rootDirs": [".", "./.react-router/types"],
+		"plugins": [{ "name": "@react-router/dev" }]
 	}
 }
