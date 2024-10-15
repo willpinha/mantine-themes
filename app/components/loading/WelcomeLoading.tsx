@@ -40,5 +40,5 @@ export function WelcomeLoading() {
 		start();
 	});
 
-	return <AnimatePresence mode="wait">{show && <Base />}</AnimatePresence>;
+	return <AnimatePresence>{show && <Base />}</AnimatePresence>;
 }

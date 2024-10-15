@@ -15,6 +15,7 @@ import { SchemeToggleButton } from "~/components/button/SchemeToggleButton";
 import { SelectThemeButton } from "~/components/button/SelectThemeButton";
 import { useThemes } from "~/hooks/use-themes";
 import { sortedThemeNames } from "~/themes";
+import surfaceClasses from "../css/surface.module.css";
 
 export default function Layout() {
 	const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();
@@ -37,7 +38,7 @@ export default function Layout() {
 			}}
 			padding="md"
 		>
-			<AppShell.Header>
+			<AppShell.Header className={surfaceClasses["surface"]}>
 				<Group h="100%" px="md" justify="space-between">
 					<Group>
 						<Burger
@@ -81,7 +82,7 @@ export default function Layout() {
 					</Group>
 				</Group>
 			</AppShell.Header>
-			<AppShell.Navbar p="md">
+			<AppShell.Navbar p="md" className={surfaceClasses["surface"]}>
 				<Stack>
 					<Group justify="space-between">
 						<Stack gap={0}>

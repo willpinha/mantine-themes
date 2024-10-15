@@ -1,7 +1,6 @@
 import mantineCoreStyles from "@mantine/core/styles.css?url";
 
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { useMounted } from "@mantine/hooks";
 import type { LinksFunction } from "react-router";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import { WelcomeLoading } from "./components/loading/WelcomeLoading";
@@ -12,11 +11,14 @@ export const links: LinksFunction = () => [
 		rel: "stylesheet",
 		href: mantineCoreStyles,
 	},
+	{
+		rel: "icon",
+		href: "/logo.svg",
+	},
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	const { themes, currentThemeName } = useThemes();
-	const mounted = useMounted();
 
 	return (
 		<html lang="en">
