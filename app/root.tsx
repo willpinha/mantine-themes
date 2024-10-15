@@ -2,30 +2,32 @@ import "@mantine/core/styles.css";
 
 import "@mantine/carousel/styles.css";
 
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import { Button, ColorSchemeScript, MantineProvider } from "@mantine/core";
 import type { LinksFunction } from "react-router";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
-import { theme } from "./lib/theme";
-import { SaturationProvider } from "./hooks/use-saturation";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import { useThemes } from "./hooks/use-themes";
 
 export const links: LinksFunction = () => [];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+	const { themes, currentThemeName } = useThemes();
+
 	return (
-		<html lang="en">
+		<html lang="en" data-mantine-theme="forest">
 			<head>
 				<meta charSet="utf-8" />
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-				<ColorSchemeScript forceColorScheme="dark" />
+				<ColorSchemeScript />
 				<Meta />
 				<Links />
 			</head>
 			<body>
-				<MantineProvider theme={theme} forceColorScheme="dark">
-					<SaturationProvider>{children}</SaturationProvider>
+				<MantineProvider theme={themes[currentThemeName].mantineTheme}>
+					<Button>A</Button>
+					{children}
 				</MantineProvider>
 				<ScrollRestoration />
 				<Scripts />
