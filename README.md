@@ -1,40 +1,67 @@
-# Welcome to React Router!
+<div align="center">
 
--   📖 [React Router docs](https://reactrouter.com/dev)
+<img alt="Mantine Themes" width="120" src="https://github.com/user-attachments/assets/b3d0a9d2-6d86-44cc-b698-b3f80266cf6c" />
 
-## Development
+# Mantine [Themes](https://mantine-themes.willpinha.link)
 
-Run the dev server:
+*Beautiful Mantine themes using semantic colors*
 
-```shellscript
-npm run dev
+</div>
+
+## About
+
+**Mantine Themes** offers you a set of themes that you can use with the [Mantine](https://mantine.dev) UI library (React). It is also
+possible to build your own themes in a convenient, simple and fast way
+
+Each theme has primary, secondary and tertiary semantic colors so you can customize your frontend with the colors you prefer
+
+Interested in Mantine Themes? [Take a look→](https://mantine-themes.willpinha.link)
+
+## License
+
+Mantine Theme is under the [MIT License](LICENSE)
+
+## Documentation
+
+### 1. How it works?
+
+Themes are dynamically generated based on the `createMantineTheme` function located in the
+[create-mantine-theme.ts](https://github.com/willpinha/mantine-themes/blob/master/app/lib/create-mantine-theme.ts) file.
+This function contains all the necessary documentation to use it
+
+Just copy this file to your project and create your themes
+
+```tsx
+import { createMantineTheme } from "./create-mantine-theme.ts";
+
+const theme = createMantineTheme({
+  baseHue: 120,
+  baseSaturation: 20,
+  colors: {
+    primary: [...],
+    secondary: [...],
+    tertiary: [...],
+  }
+});
+
+export function App() {
+  return (
+    <MantineProvider theme={theme}>
+      {/* Your application here */}
+    </MantineProvider>
+  );
+}
 ```
 
-## Deployment
+### 2. How to use a specific theme?
 
-First, build your app for production:
+Mantine Themes-specific themes are located in the [app/themes](https://github.com/willpinha/mantine-themes/tree/master/app/themes) directory.
+Just copy the color theme that interests you
 
-```sh
-npm run build
-```
+### 3. How do I create my own themes?
 
-Then run the app in production mode:
+Just use the `createMantineTheme` function and follow the instructions in the function documentation
 
-```sh
-npm start
-```
+The base colors (text, background, shadow, border, ...) will have great accessibility by default. It is your duty to ensure that the semantic
+colors (primary, secondary, tertiary) generated with [Colors generator](https://mantine.dev/colors-generator) have good contrast with the base colors
 
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
--   `build/server`
--   `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
