@@ -15,7 +15,7 @@ possible to build your own themes in a convenient, simple and fast way
 
 Each theme has primary, secondary and tertiary semantic colors so you can customize your frontend with the colors you prefer
 
-Interested in Mantine Themes? [Take a look→]()
+Interested in Mantine Themes? [Take a look→](https://mantine-themes.willpinha.link)
 
 ## License
 
