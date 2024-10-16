@@ -258,10 +258,10 @@ export default function Route() {
 				<Grid.Col span={12}>
 					<SimpleAreaChart />
 				</Grid.Col>
-				<Grid.Col span={6}>
+				<Grid.Col span={{ base: 12, md: 6 }}>
 					<LoginForm />
 				</Grid.Col>
-				<Grid.Col span={6}>
+				<Grid.Col span={{ base: 12, md: 6 }}>
 					<CrudTable />
 				</Grid.Col>
 			</Grid>
