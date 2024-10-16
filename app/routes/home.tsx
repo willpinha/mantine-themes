@@ -1,16 +1,30 @@
 import {
+	ActionIcon,
 	Anchor,
+	Avatar,
+	Badge,
 	Button,
+	Center,
 	Grid,
 	Group,
+	Pagination,
 	Paper,
 	Stack,
+	Table,
 	Text,
 	TextInput,
 	ThemeIcon,
 	Title,
+	Tooltip,
 } from "@mantine/core";
-import { TbArrowRight, TbMail } from "react-icons/tb";
+import {
+	TbArrowRight,
+	TbEye,
+	TbMail,
+	TbPencil,
+	TbPlus,
+	TbTrash,
+} from "react-icons/tb";
 import type { MetaFunction } from "react-router";
 import { PasswordInput } from "~/components/input/PasswordInput";
 import surfaceClasses from "~/css/surface.module.css";
@@ -69,6 +83,107 @@ function LoginForm() {
 	);
 }
 
+function CrudTable() {
+	const Actions = () => (
+		<Group wrap="nowrap" gap="xs">
+			<Tooltip label="Read">
+				<ActionIcon color="primary">
+					<TbEye />
+				</ActionIcon>
+			</Tooltip>
+			<Tooltip label="Update">
+				<ActionIcon color="secondary">
+					<TbPencil />
+				</ActionIcon>
+			</Tooltip>
+			<Tooltip label="Delete">
+				<ActionIcon color="red">
+					<TbTrash />
+				</ActionIcon>
+			</Tooltip>
+		</Group>
+	);
+
+	return (
+		<Paper className={surfaceClasses.surface} p="md" shadow="sm">
+			<Stack>
+				<Group justify="space-between">
+					<Stack gap={0}>
+						<Title order={3}>Users</Title>
+						<Text c="dimmed" size="sm">
+							Manage system users
+						</Text>
+					</Stack>
+					<Button leftSection={<TbPlus />}>Create</Button>
+				</Group>
+				<Table.ScrollContainer minWidth={500}>
+					<Table striped>
+						<Table.Thead>
+							<Table.Tr>
+								<Table.Th>Photo</Table.Th>
+								<Table.Th>Name</Table.Th>
+								<Table.Th>Email</Table.Th>
+								<Table.Th>Role</Table.Th>
+								<Table.Th>Actions</Table.Th>
+							</Table.Tr>
+						</Table.Thead>
+						<Table.Tbody>
+							<Table.Tr>
+								<Table.Td>
+									<Avatar></Avatar>
+								</Table.Td>
+								<Table.Td>John Doe</Table.Td>
+								<Table.Td>john@email.com</Table.Td>
+								<Table.Td>
+									<Badge variant="outline" color="tertiary">
+										Admin
+									</Badge>
+								</Table.Td>
+								<Table.Td>
+									<Actions />
+								</Table.Td>
+							</Table.Tr>
+							<Table.Tr>
+								<Table.Td>
+									<Avatar></Avatar>
+								</Table.Td>
+								<Table.Td>Jane Doe</Table.Td>
+								<Table.Td>jane@email.com</Table.Td>
+								<Table.Td>
+									<Badge variant="outline" color="tertiary">
+										User
+									</Badge>
+								</Table.Td>
+								<Table.Td>
+									<Actions />
+								</Table.Td>
+							</Table.Tr>
+							<Table.Tr>
+								<Table.Td>
+									<Avatar></Avatar>
+								</Table.Td>
+								<Table.Td>John Smith</Table.Td>
+								<Table.Td>smith@email.com</Table.Td>
+								<Table.Td>
+									<Badge variant="outline" color="tertiary">
+										Guest
+									</Badge>
+								</Table.Td>
+								<Table.Td>
+									<Actions />
+								</Table.Td>
+							</Table.Tr>
+						</Table.Tbody>
+					</Table>
+				</Table.ScrollContainer>
+				<Center>
+					<Pagination total={10} size="sm" />
+				</Center>
+			</Stack>
+		</Paper>
+	);
+}
+
 export default function Route() {
 	const { themes, currentThemeName } = useThemes();
 
@@ -79,12 +194,19 @@ export default function Route() {
 			<Stack gap={0}>
 				<Title order={3}>Examples</Title>
 				<Text c="dimmed">
-					See some usage examples below for the {theme.label} theme
+					See some usage examples below for the{" "}
+					<Text span fw="bold" fs="italic">
+						{theme.label}
+					</Text>{" "}
+					theme
 				</Text>
 			</Stack>
 			<Grid gutter="md">
 				<Grid.Col span={6}>
 					<LoginForm />
+				</Grid.Col>
+				<Grid.Col span={6}>
+					<CrudTable />
 				</Grid.Col>
 			</Grid>
 		</Stack>
