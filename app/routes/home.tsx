@@ -1,3 +1,4 @@
+import { AreaChart } from "@mantine/charts";
 import {
 	ActionIcon,
 	Anchor,
@@ -44,7 +45,7 @@ function LoginForm() {
 	return (
 		<Paper
 			p="md"
-			shadow="sm"
+			shadow="xs"
 			radius="md"
 			className={surfaceClasses["surface"]}
 		>
@@ -105,7 +106,7 @@ function CrudTable() {
 	);
 
 	return (
-		<Paper className={surfaceClasses.surface} p="md" shadow="sm">
+		<Paper className={surfaceClasses.surface} p="md" shadow="xs">
 			<Stack>
 				<Group justify="space-between">
 					<Stack gap={0}>
@@ -184,6 +185,58 @@ function CrudTable() {
 	);
 }
 
+function SimpleAreaChart() {
+	const data = [
+		{
+			date: "Mar 22",
+			Apples: 2890,
+			Oranges: 2338,
+			Tomatoes: 2452,
+		},
+		{
+			date: "Mar 23",
+			Apples: 2756,
+			Oranges: 2103,
+			Tomatoes: 2402,
+		},
+		{
+			date: "Mar 24",
+			Apples: 3322,
+			Oranges: 986,
+			Tomatoes: 1821,
+		},
+		{
+			date: "Mar 25",
+			Apples: 3470,
+			Oranges: 2108,
+			Tomatoes: 2809,
+		},
+		{
+			date: "Mar 26",
+			Apples: 3129,
+			Oranges: 1726,
+			Tomatoes: 2290,
+		},
+	];
+
+	return (
+		<Paper className={surfaceClasses.surface} p="md" shadow="xs">
+			<AreaChart
+				h={300}
+				data={data}
+				dataKey="date"
+				withLegend
+				series={[
+					{ name: "Apples", color: "primary.6" },
+					{ name: "Oranges", color: "secondary.6" },
+					{ name: "Tomatoes", color: "tertiary.6" },
+				]}
+				curveType="linear"
+			/>
+		</Paper>
+	);
+}
+
 export default function Route() {
 	const { themes, currentThemeName } = useThemes();
 
@@ -201,7 +254,10 @@ export default function Route() {
 					theme
 				</Text>
 			</Stack>
-			<Grid gutter="md">
+			<Grid>
+				<Grid.Col span={12}>
+					<SimpleAreaChart />
+				</Grid.Col>
 				<Grid.Col span={6}>
 					<LoginForm />
 				</Grid.Col>
