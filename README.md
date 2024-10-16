@@ -55,4 +55,13 @@ export function App() {
 
 ### 2. How to use a specific theme?
 
+Mantine Themes-specific themes are located in the [app/themes](https://github.com/willpinha/mantine-themes/tree/master/app/themes) directory.
+Just copy the color theme that interests you
+
 ### 3. How do I create my own themes?
+
+Just use the `createMantineTheme` function and follow the instructions in the function documentation
+
+The base colors (text, background, shadow, border, ...) will have great accessibility by default. It is your duty to ensure that the semantic
+colors (primary, secondary, tertiary) generated with [Colors generator](https://mantine.dev/colors-generator) have good contrast with the base colors
+
