@@ -18,7 +18,7 @@ export const links: LinksFunction = () => [
 	},
 	{
 		rel: "icon",
-		href: "/logo.svg",
+		href: "/logo-dark.svg",
 	},
 ];
 
@@ -33,12 +33,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-				<ColorSchemeScript />
+				<ColorSchemeScript defaultColorScheme="dark" />
 				<Meta />
 				<Links />
 			</head>
 			<body>
-				<MantineProvider theme={themes[currentThemeName].mantineTheme}>
+				<MantineProvider
+					theme={themes[currentThemeName].mantineTheme}
+					defaultColorScheme="dark"
+				>
 					<WelcomeLoading />
 					{children}
 				</MantineProvider>

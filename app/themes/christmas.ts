@@ -1,7 +1,7 @@
 import { createMantineTheme } from "~/lib/create-mantine-theme";
 import { Theme } from "~/lib/theme";
 
-export const christimas: Theme = {
+export const christmas: Theme = {
 	label: "🎄 Christmas",
 	mantineTheme: createMantineTheme({
 		baseHue: 140,

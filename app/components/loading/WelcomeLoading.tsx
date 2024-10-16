@@ -1,4 +1,4 @@
-import { Flex, Title } from "@mantine/core";
+import { Center, Flex, Image, Stack, Title } from "@mantine/core";
 import { useTimeout } from "@mantine/hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -24,9 +24,24 @@ function Base() {
 					color: "white",
 				}}
 			>
-				<Title>
-					<TextTyping text="Mantine Themes." />
-				</Title>
+				<Stack>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 0.5 }}
+					>
+						<Center>
+							<Image
+								src="/logo-light.svg"
+								alt="Mantine Themes"
+								w={100}
+							/>
+						</Center>
+					</motion.div>
+					<Title>
+						<TextTyping text="Mantine Themes." />
+					</Title>
+				</Stack>
 			</Flex>
 		</motion.div>
 	);
