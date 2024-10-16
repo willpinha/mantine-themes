@@ -4,6 +4,7 @@ import {
 	AppShell,
 	Burger,
 	Group,
+	ScrollArea,
 	Stack,
 	Text,
 	Title,
@@ -84,7 +85,7 @@ export default function Layout() {
 				</Group>
 			</AppShell.Header>
 			<AppShell.Navbar p="md" className={surfaceClasses["surface"]}>
-				<Stack>
+				<AppShell.Section>
 					<Group justify="space-between">
 						<Stack gap={0}>
 							<Title order={5}>Choose a theme</Title>
@@ -95,7 +96,9 @@ export default function Layout() {
 
 						<SchemeToggleButton />
 					</Group>
+				</AppShell.Section>
 
+				<AppShell.Section grow my="md" component={ScrollArea}>
 					<Stack gap="xs">
 						{sortedThemeNames.map((themeName) => (
 							<SelectThemeButton
@@ -104,7 +107,7 @@ export default function Layout() {
 							/>
 						))}
 					</Stack>
-				</Stack>
+				</AppShell.Section>
 			</AppShell.Navbar>
 			<AppShell.Main>
 				<Outlet />
