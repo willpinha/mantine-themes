@@ -11,7 +11,7 @@ import {
 	Tooltip,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { TbBrandGithub } from "react-icons/tb";
+import { TbBrandGithub, TbFileDescription } from "react-icons/tb";
 import { Outlet } from "react-router";
 import { SchemeToggleButton } from "~/components/button/SchemeToggleButton";
 import { SelectThemeButton } from "~/components/button/SelectThemeButton";
@@ -56,9 +56,7 @@ export default function Layout() {
 							size="sm"
 						/>
 						<Stack gap={0}>
-							<Title visibleFrom="sm" order={5}>
-								Mantine Themes
-							</Title>
+							<Title order={5}>Mantine Themes</Title>
 							<Text c="dimmed" size="xs">
 								Made by{" "}
 								<Anchor
@@ -71,10 +69,19 @@ export default function Layout() {
 						</Stack>
 					</Group>
 					<Group gap="xs">
+						<Tooltip label="Documentation">
+							<ActionIcon
+								aria-label="Documentation"
+								component="a"
+								href=""
+							>
+								<TbFileDescription />
+							</ActionIcon>
+						</Tooltip>
 						<Tooltip label="GitHub">
 							<ActionIcon
 								aria-label="GitHub"
-								color="dark.8"
+								color="dark.5"
 								component="a"
 								href="https://github.com/willpinha/mantine-themes"
 							>
