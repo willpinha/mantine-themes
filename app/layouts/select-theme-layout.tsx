@@ -73,7 +73,7 @@ export default function Layout() {
 							<ActionIcon
 								aria-label="Documentation"
 								component="a"
-								href=""
+								href="https://github.com/willpinha/mantine-themes?tab=readme-ov-file#documentation"
 							>
 								<TbFileDescription />
 							</ActionIcon>
