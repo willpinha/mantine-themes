@@ -44,5 +44,7 @@ export const halloween: Theme = {
 				"#6b218d",
 			],
 		},
+		headings: { fontFamily: "Risque" },
+		defaultRadius: "lg",
 	}),
 };

@@ -44,5 +44,6 @@ export const military: Theme = {
 				"#4a5167",
 			],
 		},
+		defaultRadius: 0,
 	}),
 };

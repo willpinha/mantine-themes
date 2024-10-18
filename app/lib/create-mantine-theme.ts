@@ -3,6 +3,7 @@ import {
 	DEFAULT_THEME,
 	DefaultMantineColor,
 	MantineColorsTuple,
+	MantineThemeOverride,
 	mergeMantineTheme,
 } from "@mantine/core";
 
@@ -27,7 +28,7 @@ type createMantineThemeProps = {
 		secondary: MantineColorsTuple;
 		tertiary: MantineColorsTuple;
 	};
-};
+} & Omit<MantineThemeOverride, "colors">;
 
 /**
  * Creates a Mantine theme with the specified base hue/saturation and primary, secondary and
@@ -50,6 +51,7 @@ export function createMantineTheme({
 	baseHue,
 	baseSaturation,
 	colors,
+	...custom
 }: createMantineThemeProps) {
 	if (baseHue < 0 || baseHue > 360) {
 		throw new Error("Hue must be between 0 and 360");
@@ -92,6 +94,10 @@ export function createMantineTheme({
 			black: `hsl(${baseHue} 10% 10%)`,
 			white: `hsl(${baseHue} 10% 94%)`,
 			primaryColor: "primary",
+			fontFamily: "Roboto",
+			headings: { fontFamily: "Roboto" },
+			defaultRadius: "md",
+			...custom,
 		})
 	);
 }

@@ -43,12 +43,7 @@ export const meta: MetaFunction = () => {
 
 function LoginForm() {
 	return (
-		<Paper
-			p="md"
-			shadow="xs"
-			radius="md"
-			className={surfaceClasses["surface"]}
-		>
+		<Paper p="md" shadow="xs" className={surfaceClasses["surface"]}>
 			<Stack>
 				<Stack gap={0}>
 					<Title order={3}>Login</Title>

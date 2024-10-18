@@ -44,5 +44,6 @@ export const synthwave: Theme = {
 				"#a73c00",
 			],
 		},
+		headings: { fontFamily: "Audiowide" },
 	}),
 };

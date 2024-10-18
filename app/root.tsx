@@ -1,5 +1,6 @@
 import mantineChartStyles from "@mantine/charts/styles.css?url";
 import mantineCoreStyles from "@mantine/core/styles.css?url";
+import appStyles from "./app.css?url";
 
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import type { LinksFunction } from "react-router";
@@ -15,6 +16,10 @@ export const links: LinksFunction = () => [
 	{
 		rel: "stylesheet",
 		href: mantineChartStyles,
+	},
+	{
+		rel: "stylesheet",
+		href: appStyles,
 	},
 	{
 		rel: "icon",
