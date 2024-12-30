@@ -2,7 +2,7 @@
 
 <img alt="Mantine Themes" width="120" src="https://github.com/user-attachments/assets/b3d0a9d2-6d86-44cc-b698-b3f80266cf6c" />
 
-# Mantine [Themes](https://mantine-themes.willpinha.link)
+# Mantine [Themes](https://mantine-themes.pinha.link)
 
 *Beautiful Mantine themes using semantic colors*
 
@@ -15,7 +15,7 @@ possible to build your own themes in a convenient, simple and fast way
 
 Each theme has primary, secondary and tertiary semantic colors so you can customize your frontend with the colors you prefer
 
-Interested in Mantine Themes? [Take a look→](https://mantine-themes.willpinha.link)
+Interested in Mantine Themes? [Take a look→](https://mantine-themes.pinha.link)
 
 ## License
 
