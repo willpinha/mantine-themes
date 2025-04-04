@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"sideEffects": false,
-	"homepage": "https://willpinha.github.io/mantine-themes",
+	"homepage": "/mantine-themes/#",
 	"type": "module",
 	"scripts": {
 		"dev": "react-router dev",
