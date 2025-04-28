@@ -1,3 +1,6 @@
+> [!WARNING]
+> This project was developed with Mantine v7.13 and is no longer being maintained
+
 <div align="center">
 
 <img alt="Mantine Themes" width="120" src="https://github.com/user-attachments/assets/b3d0a9d2-6d86-44cc-b698-b3f80266cf6c" />
