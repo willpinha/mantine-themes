@@ -6,6 +6,8 @@
 
 *Beautiful Mantine themes using semantic colors*
 
+<img alt="Screenshot" src="https://github.com/user-attachments/assets/8dc88fcc-b7b4-4579-8020-c1c0cb0fdf4f" />
+
 </div>
 
 ## About
